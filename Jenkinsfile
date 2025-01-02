@@ -16,7 +16,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {  
+                withSonarQubeEnv('sonarqube-server') {  
                     bat 'sonar-scanner.bat -D"sonar.projectKey=backend-project" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_82ae541279bd3b0292b3c1c296e19cc696da8cdd"'  
                 }
             }
